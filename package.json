@@ -1,0 +1,16 @@
+{
+  "name": "liquor-prices-delhi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": "https://github.com/drenther/liquor-prices-delhi.git",
+  "author": "Soumyajit Pathak <s.pathak5995@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "puppeteer": "^0.10.2"
+  }
+}
