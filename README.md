@@ -10,6 +10,7 @@ Foreign Liquor - Beer, Brandy, Gin, Rum, Vodka, Whiskey, Wine
 Indian Liquor - Beer, Brandy, Draught Beer, Gin, Rum, Vodka, Whiskey, Wine 
 
 ## Structure -
+```json
 {
 	"foreign-liquor-beer": {
 		[
@@ -31,3 +32,4 @@ Indian Liquor - Beer, Brandy, Draught Beer, Gin, Rum, Vodka, Whiskey, Wine
 	.
 	.
 }
+```
