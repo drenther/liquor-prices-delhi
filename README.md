@@ -22,14 +22,8 @@ Indian Liquor - Beer, Brandy, Draught Beer, Gin, Rum, Vodka, Whiskey, Wine
 				"pack": "1",
 				"price": "350.00",
 				"warehouse": "NORTHERN SPIRITS PVT. LTD."
-			},
-			.
-			.
-			.
+			}
 		]
-	},
-	.
-	.
-	.
+	}
 }
 ```
