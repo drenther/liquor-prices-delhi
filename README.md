@@ -12,18 +12,16 @@ Indian Liquor - Beer, Brandy, Draught Beer, Gin, Rum, Vodka, Whiskey, Wine
 ## Structure -
 ```json
 {
-	"foreign-liquor-beer": {
-		[
-			{
-				"slNo": "1",
-				"brandCode": "1968KSA",
-				"brandName": "1698 KENTISH STRONG ALEL1F20153117",
-				"size": "500",
-				"pack": "1",
-				"price": "350.00",
-				"warehouse": "NORTHERN SPIRITS PVT. LTD."
-			}
-		]
-	}
+	"foreign-liquor-beer": [
+		{
+			"slNo": "1",
+			"brandCode": "1968KSA",
+			"brandName": "1698 KENTISH STRONG ALEL1F20153117",
+			"size": "500",
+			"pack": "1",
+			"price": "350.00",
+			"warehouse": "NORTHERN SPIRITS PVT. LTD."
+		}
+	]
 }
 ```
