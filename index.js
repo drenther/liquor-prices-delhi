@@ -1,4 +1,5 @@
 const { Chrome } = require('navalia');
+const fs = require('fs');
 const chrome = new Chrome();
 
 const db = {};
@@ -51,16 +52,33 @@ const populateDb = async (type, cat) => {
 		`${type
 			.toLowerCase()
 			.split(' ')
-			.join('-')}-${cat.toLowerCase()}`
+			.join('-')}-${cat
+			.toLowerCase()
+			.split(' ')
+			.join('-')}`
 	] = result;
 };
 
 async function main() {
-	await populateDb('Foreign Liquor', 'Whisky');
 	await populateDb('Foreign Liquor', 'Beer');
-	await populateDb('Indian Liquor', 'Whisky');
+	await populateDb('Foreign Liquor', 'Brandy');
+	await populateDb('Foreign Liquor', 'Gin');
+	await populateDb('Foreign Liquor', 'Rum');
+	await populateDb('Foreign Liquor', 'Vodka');
+	await populateDb('Foreign Liquor', 'Whisky');
+	await populateDb('Foreign Liquor', 'Wine');
 	await populateDb('Indian Liquor', 'Beer');
-	console.log(Object.keys(db).map(x => db[x].length));
+	await populateDb('Indian Liquor', 'Brandy');
+	await populateDb('Indian Liquor', 'Draught Beer');
+	await populateDb('Indian Liquor', 'Gin');
+	await populateDb('Indian Liquor', 'Rum');
+	await populateDb('Indian Liquor', 'Vodka');
+	await populateDb('Indian Liquor', 'Whisky');
+	await populateDb('Indian Liquor', 'Wine');
+	fs.writeFile('./db.json', JSON.stringify(db), 'utf-8', err => {
+		if (err) console.error(err);
+		console.log('Successfully scraped!');
+	});
 }
 
 main();
