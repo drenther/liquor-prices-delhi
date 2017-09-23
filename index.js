@@ -36,14 +36,21 @@ const populateDb = async (type, cat) => {
 			)
 			.reduce((a, x) => {
 				const drinks = [...a];
+				const parser = new DOMParser();
+				const brandName = parser
+					.parseFromString(x[2], 'text/html')
+					.querySelector('body').innerText;
+				const warehouse = parser
+					.parseFromString(x[6], 'text/html')
+					.querySelector('body').innerText;
 				drinks.push({
 					slNo: x[0],
 					brandCode: x[1],
-					brandName: x[2],
+					brandName,
 					size: x[3],
 					pack: x[4],
 					price: x[5],
-					warehouse: x[6],
+					warehouse,
 				});
 				return drinks;
 			}, []);
@@ -75,9 +82,10 @@ async function main() {
 	await populateDb('Indian Liquor', 'Vodka');
 	await populateDb('Indian Liquor', 'Whisky');
 	await populateDb('Indian Liquor', 'Wine');
-	fs.writeFile('./db.json', JSON.stringify(db), 'utf-8', err => {
+	fs.writeFile('./db.json', JSON.stringify(db), 'latin1', err => {
 		if (err) console.error(err);
 		console.log('Successfully scraped!');
+		process.exit();
 	});
 }
 
